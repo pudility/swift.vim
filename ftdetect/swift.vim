@@ -1,4 +1,4 @@
-autocmd BufNewFile,BufRead *.swift set filetype=swift
+autocmd BufNewFile,BufRead *.spr set filetype=superflow
 autocmd BufRead * call s:Swift()
 function! s:Swift()
   if !empty(&filetype)
@@ -6,7 +6,7 @@ function! s:Swift()
   endif
 
   let line = getline(1)
-  if line =~ "^#!.*swift"
-    setfiletype swift
+  if line =~ "^#!.*spr"
+    setfiletype superflow
   endif
 endfunction
